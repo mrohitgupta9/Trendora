@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trendora - Premium Tech & Fashion Store</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="light-theme">
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav-container">
+        <div class="logo">
+          <div class="logo-icon">T</div>
+          <span class="logo-text">Trendora</span>
+        </div>
+
+        <div class="nav-links" id="navLinks">
+          <button class="nav-link" data-scroll="home">Home</button>
+          <div class="nav-item dropdown">
+            <button class="nav-link dropdown-toggle">
+              Products <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-menu">
+              <div class="dropdown-section">
+                <h4 class="dropdown-title">Technology</h4>
+                <button class="dropdown-link" data-category="smartphones">
+                  Smartphones
+                </button>
+                <button class="dropdown-link" data-category="laptops">
+                  Laptops
+                </button>
+                <button class="dropdown-link" data-category="accessories">
+                  Tech Accessories
+                </button>
+              </div>
+              <div class="dropdown-section">
+                <h4 class="dropdown-title">Fashion</h4>
+                <button class="dropdown-link" data-category="clothing">
+                  Clothing
+                </button>
+                <button class="dropdown-link" data-category="shoes">
+                  Shoes
+                </button>
+                <button class="dropdown-link" data-category="bags">Bags</button>
+                <button class="dropdown-link" data-category="jewelry">
+                  Jewelry
+                </button>
+              </div>
+              <div class="dropdown-section">
+                <h4 class="dropdown-title">Collections</h4>
+                <button class="dropdown-link" data-category="featured">
+                  Featured Items
+                </button>
+                <button class="dropdown-link" data-category="new">
+                  New Arrivals
+                </button>
+                <button class="dropdown-link" data-category="sale">
+                  Sale Items
+                </button>
+              </div>
+            </div>
+          </div>
+          <button class="nav-link" data-scroll="featured">Featured</button>
+          <button class="nav-link" data-scroll="blog">Blog</button>
+          <button class="nav-link" data-scroll="deals">Deals</button>
+          <button class="nav-link" data-scroll="about">About</button>
+          <button class="nav-link" data-scroll="contact">Contact</button>
+        </div>
+
+        <div class="nav-actions">
+          <!-- Search Bar -->
+          <div class="search-container" id="searchContainer">
+            <form id="searchForm" class="search-form">
+              <input
+                type="text"
+                id="searchInput"
+                class="search-input"
+                placeholder="Search products..."
+              />
+              <button type="submit" class="search-button">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+            <div id="searchResults" class="search-results">
+              <!-- Search results will appear here -->
+            </div>
+          </div>
+
+          <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-sun sun-icon"></i>
+            <i class="fas fa-moon moon-icon"></i>
+          </button>
+
+          <div class="user-menu">
+            <button class="user-button" id="userButton">
+              <i class="fas fa-user"></i>
+            </button>
+            <div class="user-dropdown" id="userDropdown">
+              <div class="user-info hidden" id="userInfo">
+                <p class="user-name" id="userName"></p>
+                <p class="user-email" id="userEmail"></p>
+              </div>
+              <hr />
+              <button class="logout-button" id="logoutButton">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Log out</span>
+              </button>
+            </div>
+          </div>
+
+          <button class="cart-button" id="cartButton">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+
+          <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-gallery">
+        <div class="hero-slide active" data-slide="0">
+          <div
+            class="hero-background"
+            style="
+              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            "
+          >
+            <div class="hero-product">📱</div>
+          </div>
+        </div>
+        <div class="hero-slide" data-slide="1">
+          <div
+            class="hero-background"
+            style="
+              background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            "
+          >
+            <div class="hero-product">👗</div>
+          </div>
+        </div>
+        <div class="hero-slide" data-slide="2">
+          <div
+            class="hero-background"
+            style="
+              background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            "
+          >
+            <div class="hero-product">💻</div>
+          </div>
+        </div>
+        <div class="hero-slide" data-slide="3">
+          <div
+            class="hero-background"
+            style="
+              background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            "
+          >
+            <div class="hero-product">👜</div>
+          </div>
+        </div>
+        <div class="hero-slide" data-slide="4">
+          <div
+            class="hero-background"
+            style="
+              background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            "
+          >
+            <div class="hero-product">💎</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <div class="container">
+          <h1 class="hero-title">Premium Tech & Fashion Store</h1>
+          <p class="hero-description">
+            Discover the latest technology and fashion trends with unbeatable
+            prices and quality. Your style and tech journey starts here.
+          </p>
+          <button class="cta-button" data-scroll="products">Shop Now</button>
+        </div>
+      </div>
+
+      <div class="hero-indicators">
+        <button class="indicator active" data-slide="0"></button>
+        <button class="indicator" data-slide="1"></button>
+        <button class="indicator" data-slide="2"></button>
+        <button class="indicator" data-slide="3"></button>
+        <button class="indicator" data-slide="4"></button>
+      </div>
+
+      <div class="hero-navigation">
+        <button class="hero-nav-btn prev-btn" id="prevSlide">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="hero-nav-btn next-btn" id="nextSlide">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-section" id="featured">
+      <div class="container">
+        <h2 class="section-title">Featured Products</h2>
+        <p class="section-subtitle">
+          Discover our handpicked selection of premium items
+        </p>
+
+        <div class="featured-grid" id="featuredGrid">
+          <!-- Featured products will be dynamically loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+      <div class="container">
+        <h2 class="section-title">Our Collection</h2>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="smartphones">Phones</button>
+          <button class="filter-btn" data-filter="laptops">Laptops</button>
+          <button class="filter-btn" data-filter="clothing">Clothing</button>
+          <button class="filter-btn" data-filter="shoes">Shoes</button>
+          <button class="filter-btn" data-filter="bags">Bags</button>
+          <button class="filter-btn" data-filter="jewelry">Jewelry</button>
+          <button class="filter-btn" data-filter="accessories">
+            Accessories
+          </button>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Products will be dynamically loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section" id="blog">
+      <div class="container">
+        <h2 class="section-title">Latest Blog Posts</h2>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <div class="blog-image">📝</div>
+            <div class="blog-content">
+              <h3 class="blog-title">Tech Trends 2024</h3>
+              <p class="blog-excerpt">
+                Discover the latest technology trends that will shape the
+                future...
+              </p>
+              <span class="blog-date">March 15, 2024</span>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-image">👔</div>
+            <div class="blog-content">
+              <h3 class="blog-title">Fashion Forward</h3>
+              <p class="blog-excerpt">
+                Explore the newest fashion trends and styling tips...
+              </p>
+              <span class="blog-date">March 12, 2024</span>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-image">💡</div>
+            <div class="blog-content">
+              <h3 class="blog-title">Shopping Guide</h3>
+              <p class="blog-excerpt">
+                Tips for finding the best deals and quality products...
+              </p>
+              <span class="blog-date">March 10, 2024</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deals Section -->
+    <section class="deals-section" id="deals">
+      <div class="container">
+        <h2 class="section-title">Special Deals</h2>
+        <p class="section-subtitle">Limited time offers on selected items</p>
+        <div class="deals-grid" id="dealsGrid">
+          <!-- Deals will be dynamically loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-content">
+          <h2 class="section-title">About Trendora</h2>
+          <p class="about-description">
+            At Trendora, we believe in bringing you the perfect blend of
+            cutting-edge technology and timeless fashion. Our curated collection
+            features the latest gadgets, premium electronics, and stylish
+            fashion pieces that define modern lifestyle.
+          </p>
+          <div class="features-grid">
+            <div class="feature">
+              <div class="feature-icon">🚚</div>
+              <h3 class="feature-title">Fast Shipping</h3>
+              <p class="feature-description">
+                Free shipping on orders over $100 with express delivery options
+              </p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🛡️</div>
+              <h3 class="feature-title">Quality Guarantee</h3>
+              <p class="feature-description">
+                All products come with warranty and 30-day return policy
+              </p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">💎</div>
+              <h3 class="feature-title">Premium Quality</h3>
+              <p class="feature-description">
+                Carefully selected products from trusted brands worldwide
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3 class="contact-subtitle">Contact Information</h3>
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>support@trendora.com</span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+1 (555) 123-4567</span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>123 Fashion Street, Tech City, TC 12345</span>
+              </div>
+            </div>
+          </div>
+          <div class="business-hours">
+            <h3 class="contact-subtitle">Business Hours</h3>
+            <div class="hours-list">
+              <div class="hours-item">
+                <span>Monday - Friday</span>
+                <span>9:00 AM - 8:00 PM</span>
+              </div>
+              <div class="hours-item">
+                <span>Saturday</span>
+                <span>10:00 AM - 6:00 PM</span>
+              </div>
+              <div class="hours-item">
+                <span>Sunday</span>
+                <span>12:00 PM - 5:00 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand Section -->
+          <div class="footer-brand">
+            <div class="logo">
+              <div class="logo-icon">T</div>
+              <span class="logo-text">Trendora</span>
+            </div>
+            <p class="footer-description">
+              Your premier destination for cutting-edge technology and timeless
+              fashion. Quality, style, and innovation in every product.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-links">
+            <h3 class="footer-title">Quick Links</h3>
+            <div class="footer-link-list">
+              <button class="footer-link" data-scroll="home">Home</button>
+              <button class="footer-link" data-scroll="products">
+                Products
+              </button>
+              <button class="footer-link" data-scroll="about">About Us</button>
+              <button class="footer-link" data-scroll="contact">Contact</button>
+            </div>
+          </div>
+
+          <!-- Categories -->
+          <div class="footer-categories">
+            <h3 class="footer-title">Categories</h3>
+            <div class="footer-link-list">
+              <button class="footer-link" data-filter="smartphones">
+                Smartphones
+              </button>
+              <button class="footer-link" data-filter="laptops">Laptops</button>
+              <button class="footer-link" data-filter="clothing">
+                Fashion
+              </button>
+              <button class="footer-link" data-filter="accessories">
+                Accessories
+              </button>
+            </div>
+          </div>
+
+          <!-- Customer Service -->
+          <div class="footer-service">
+            <h3 class="footer-title">Customer Service</h3>
+            <div class="footer-link-list">
+              <a href="#" class="footer-link">Help Center</a>
+              <a href="#" class="footer-link">Shipping Info</a>
+              <a href="#" class="footer-link">Returns & Exchanges</a>
+              <a href="#" class="footer-link">Size Guide</a>
+              <a href="#" class="footer-link">Track Your Order</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="footer-bottom">
+          <p class="copyright">&copy; 2024 Trendora. All rights reserved.</p>
+          <div class="legal-links">
+            <a href="#" class="legal-link">Privacy Policy</a>
+            <a href="#" class="legal-link">Terms of Service</a>
+            <a href="#" class="legal-link">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="authModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="authTitle">Sign In</h2>
+          <button class="close-button" id="closeAuthModal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <!-- Login Form -->
+          <form id="loginForm" class="auth-form">
+            <div class="form-group">
+              <label for="loginEmail">Email</label>
+              <input
+                type="email"
+                id="loginEmail"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <div class="password-input">
+                <input
+                  type="password"
+                  id="loginPassword"
+                  placeholder="Enter your password"
+                  required
+                />
+                <button type="button" class="toggle-password">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+            <button type="submit" class="submit-button">Sign In</button>
+            <div class="form-footer">
+              <span>Don't have an account? </span>
+              <button type="button" class="switch-form" id="switchToSignup">
+                Sign up
+              </button>
+            </div>
+          </form>
+
+          <!-- Signup Form -->
+          <form id="signupForm" class="auth-form hidden">
+            <div class="form-group">
+              <label for="signupName">Full Name</label>
+              <input
+                type="text"
+                id="signupName"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="signupEmail">Email</label>
+              <input
+                type="email"
+                id="signupEmail"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="signupPassword">Password</label>
+              <div class="password-input">
+                <input
+                  type="password"
+                  id="signupPassword"
+                  placeholder="Create a password"
+                  required
+                />
+                <button type="button" class="toggle-password">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <div class="password-input">
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  placeholder="Confirm your password"
+                  required
+                />
+                <button type="button" class="toggle-password">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+            <button type="submit" class="submit-button">Create Account</button>
+            <div class="form-footer">
+              <span>Already have an account? </span>
+              <button type="button" class="switch-form" id="switchToLogin">
+                Sign in
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Shopping Cart</h2>
+          <button class="close-button" id="closeCartModal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div id="cartItems" class="cart-items">
+            <!-- Cart items will be dynamically loaded here -->
+          </div>
+          <div id="cartEmpty" class="cart-empty">
+            <i class="fas fa-shopping-cart"></i>
+            <p>Your cart is empty</p>
+          </div>
+          <div id="cartTotal" class="cart-total hidden">
+            <div class="total-price">$0.00</div>
+            <button class="checkout-button" id="checkoutButton">
+              Proceed to Checkout
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+      <div class="modal-content quick-view-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Quick View</h2>
+          <button class="close-button" id="closeQuickViewModal">&times;</button>
+        </div>
+        <div class="modal-body quick-view-body">
+          <div class="quick-view-grid">
+            <div class="quick-view-image">
+              <div class="product-image-large" id="quickViewImage">
+                <!-- Product icon will be displayed here -->
+              </div>
+            </div>
+            <div class="quick-view-details">
+              <h3 class="quick-view-title" id="quickViewTitle"></h3>
+              <p class="quick-view-description" id="quickViewDescription"></p>
+              <div class="quick-view-price" id="quickViewPrice"></div>
+              <div class="quick-view-category">
+                <span class="category-badge" id="quickViewCategory"></span>
+              </div>
+              <div class="quick-view-actions">
+                <div class="quantity-selector">
+                  <button class="quantity-btn" id="decreaseQty">-</button>
+                  <span class="quantity-display" id="quickViewQuantity">1</span>
+                  <button class="quantity-btn" id="increaseQty">+</button>
+                </div>
+                <button class="add-to-cart-large" id="quickViewAddToCart">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
